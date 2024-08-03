@@ -73,4 +73,17 @@ export default class LinkedList {
         }
         return null;
     }
+    toString() {
+        if (!this.head) {
+            return "null";
+        }
+        let curNode = this.head;
+        let returnString = "";
+        while (curNode) {
+            returnString += `( ${curNode.data} ) -> `;
+            curNode = curNode.next;
+        }
+        returnString += "null"
+        return returnString;
+    }
 }
