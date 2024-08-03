@@ -15,6 +15,6 @@ myList.append("d");
 myList.append("!");
 
 
-console.log(myList.contains("l"));
+console.log(myList.find("!"));
 
 
