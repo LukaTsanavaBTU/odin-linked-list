@@ -51,4 +51,14 @@ export default class LinkedList {
         this.size -= 1;
         return returnVal;
     }
+    contains(value) {
+        let curNode = this.head;
+        while (curNode) {
+            if (curNode.data === value) {
+                return true;
+            }
+            curNode = curNode.next;
+        }
+        return false;
+    }
 }
