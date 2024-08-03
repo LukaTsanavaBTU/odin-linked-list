@@ -6,9 +6,6 @@ myList.append("H");
 myList.append("i");
 myList.append("!");
 
-console.log(myList.at(0));
+console.log(myList.pop());
 
-myList.prepend("P");
 
-console.log(myList.at(0));
-console.log(myList.size);

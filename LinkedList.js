@@ -3,7 +3,7 @@ import Node from "./Node.js";
 export default class LinkedList {
     constructor() {
         this.head = null;
-        this.tail = 0;
+        this.tail = null;
         this.size = 0;
     }
     append(value) {
@@ -17,6 +17,7 @@ export default class LinkedList {
                 curNode = curNode.next;
             }
             curNode.next = newNode;
+            this.tail = newNode;
         }
         this.size += 1;
     }
@@ -38,5 +39,16 @@ export default class LinkedList {
             }
         }
         return curNode.data;
+    }
+    pop() {
+        let curNode = this.head;
+        for(let i = 0; i < this.size - 2; i++) {
+            curNode = curNode.next;
+        }
+        const returnVal = curNode.next.data;
+        curNode.next = null;
+        this.tail = curNode;
+        this.size -= 1;
+        return returnVal;
     }
 }
