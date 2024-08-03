@@ -86,4 +86,27 @@ export default class LinkedList {
         returnString += "null"
         return returnString;
     }
+    insertAt(value, index) {
+        // Make choosing element from the end using negative index possible
+        index = (index >= 0) ? index : (this.size + index + 1); 
+        console.log(index);
+        if (index < 0 || index > this.size) {
+            throw new RangeError("Index out of range");
+        }
+        else if (index === 0) {
+            this.prepend(value);
+        } else {
+            const newNode = new Node(value);
+            let curNode = this.head;
+            for(let i = 0; i < index - 1; i++) {
+                curNode = curNode.next;
+            }
+            newNode.next = curNode.next;
+            curNode.next = newNode;
+            if (!newNode.next) {
+                this.tail = newNode;
+            }
+            this.size += 1;
+        }
+    }
 }
