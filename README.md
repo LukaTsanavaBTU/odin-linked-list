@@ -8,7 +8,7 @@ The purpose of this project was to implement linked lists using plain JavaScript
 - **size**: the size of the entire list;
 - **head**: the first node of the list;
 - **tail**: the last node of the list;
-- **at(index)**: returns the node at the given index;
+- **at(index)**: returns the node at the given index (also accepts negative indices);
 - **pop()**: removes the last node in the list and returns its value;
 - **contains(value)**: returns true if the value exists in the list and false if it doesn't;
 - **find(value)**: returns the index of the value if it exists in the list and null if it doesn't;
