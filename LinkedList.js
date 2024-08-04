@@ -89,7 +89,6 @@ export default class LinkedList {
     insertAt(value, index) {
         // Make choosing element from the end using negative index possible
         index = (index >= 0) ? index : (this.size + index + 1); 
-        console.log(index);
         if (index < 0 || index > this.size) {
             throw new RangeError("Index out of range");
         }
@@ -108,5 +107,32 @@ export default class LinkedList {
             }
             this.size += 1;
         }
+    }
+    removeAt(index) {
+        // Make choosing element from the end using negative index possible
+        index = (index >= 0) ? index : (this.size + index); 
+        if (index < 0 || index >= this.size) {
+            throw new RangeError("Index out of range");
+        }
+        let returnVal;
+        if (index === 0 ) {
+            returnVal = this.head.data;
+            this.head = this.head.next;
+            if (!this.head.next) {
+                this.tail = this.head;
+            }
+        } else {
+            let curNode = this.head;
+            for(let i = 0; i < index - 1; i++) {
+                curNode = curNode.next;
+            }
+            returnVal = curNode.next.data;
+            curNode.next = curNode.next.next;
+            if (!curNode.next) {
+                this.tail = curNode;
+            }
+        }
+        this.size -= 1;
+        return returnVal;
     }
 }

@@ -14,6 +14,10 @@ myList.append("l");
 myList.append("d");
 myList.append("!");
 
-myList.insertAt("s", -3);
+console.log(myList.removeAt(4));
 console.log(myList.toString());
+console.log(myList.size);
+console.log(myList.head);
+console.log(myList.tail);
+
 
