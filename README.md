@@ -4,7 +4,7 @@ Made for The Odin Project.
 The purpose of this project was to implement linked lists using plain JavaScript. There are two files: Node.js containing a class representing a node in the linked list; LinkedList.js containing a class representing the linked list itself. For the linked list class, I've implemented several methods and properties:
 
 - **append(value)**: add a new node at the end of the list;
-- **prepend(value)**: add a new node at the end of the list;
+- **prepend(value)**: add a new node at the start of the list;
 - **size**: the size of the entire list;
 - **head**: the first node of the list;
 - **tail**: the last node of the list;
