@@ -122,7 +122,7 @@ export default class LinkedList {
         if (index === 0 ) {
             returnVal = this.head.data;
             this.head = this.head.next;
-            if (!this.head.next) {
+            if (!this.head || !this.head.next) {
                 this.tail = this.head;
             }
         } else {
